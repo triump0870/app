@@ -23,10 +23,10 @@ SECRET_KEY = 'vw-9325!us-n(5&c&#!_m5p^1k*3hljph236x9#__6wvj4voc9'
 DEBUG = True
 
 #Template section
-TEMPLATE_DIRS = os.path.join(BASE_DIR,'templates')
+TEMPLATE_DIRS = (os.path.join(BASE_DIR,'templates'),)
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.localhost','.localhost.']
 
 
 # Application definition
