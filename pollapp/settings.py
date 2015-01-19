@@ -22,9 +22,11 @@ SECRET_KEY = '&nn15p1vjn2ky)!cu0w(rcqx9_49&i3)871vr_rfe$__88ab!='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+#Template 
+TEMPLATE_DIRS = [os.path.join(BASE_DIR,'templates')]
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.localhost']
 
 
 # Application definition

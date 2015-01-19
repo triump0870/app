@@ -1,4 +1,6 @@
 from django.db import models
+import datetime
+from django.utils import timezone
 
 # Create your models here.
 class Question(models.Model):
@@ -8,6 +10,13 @@ class Question(models.Model):
 	def __unicode__(self):
 		return self.question_text
 
+	def published_recently(self):
+		now = timezone.now()
+		return now - datetime.timedelta(days=1)<=self.pub_date <=now
+	published_recently.admin_order_field = 'pub_date'
+	published_recently.boolean = True
+	published_recently.short_description = 'Published recently?'
+	
 class Choice(models.Model):
 	question = models.ForeignKey(Question)
 	choice_text = models.CharField(max_length=200)
